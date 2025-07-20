@@ -1,0 +1,22 @@
+<div class="home-container">
+    <h1>Welcome to Issue Tracker Lite!</h1>
+    
+    <div class="home-actions">
+        <button (click)="goToRegister()">Register</button>
+        <button (click)="showLogin = !showLogin">
+            {{ showLogin ? 'Hide Login' : 'Show Login' }}
+        </button>
+    </div>
+
+    <form *ngIf="showLogin" (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" name="email" [(ngModel)]="model.email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" [(ngModel)]="model.password" required>
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+</div>
