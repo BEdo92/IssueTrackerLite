@@ -1,0 +1,6 @@
+@IssueTrackerLite_HostAddress = http://localhost:5138
+
+GET {{IssueTrackerLite_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
